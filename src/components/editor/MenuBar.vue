@@ -14,35 +14,34 @@
 
             <button class="btn btn-sm btn-menu">
             <router-link class="decoration-none" to="/" target="_blank" active-class="" exact-active-class="">
-              New <i class="fa fa-file-code-o" aria-hidden="true"></i>
+              New<i class="fa fa-file-code-o" aria-hidden="true"></i>
             </router-link>
             </button>
 
             <button type="button" id="custInp" class="btn btn-sm btn-menu" @click="InOutBoxToggle()">
-              Input <i class="fa fa-keyboard-o" aria-hidden="true"></i>
+              Input<i class="fa fa-keyboard-o" aria-hidden="true"></i>
             </button>
             <button type="button" id="save" class="btn btn-sm btn-menu" @click="saveToServer()">Save <i
               class="fa fa-floppy-o" aria-hidden="true"></i></button>
             <button type="button" id="download" class="btn btn-sm btn-menu" @click="showDownloadModal()">
-              Download
-              <i class="fa fa-download" aria-hidden="true"></i>
+              Download<i class="fa fa-download" aria-hidden="true"></i>
             </button>
             <input type="file" ref="fileUpload" style="display:none" @change="uploadCode">
             <button type="button" id="uploadFile" class=" btn btn-sm btn-menu" @click="selectFile">
-              Upload <span class="fa fa-folder-open" aria-hidden="true"></span>
+              Upload<span class="fa fa-folder-open" aria-hidden="true"></span>
             </button>
             <input type="file" id="upload" style="display:none;">
             <button type="button" id="settingButton" class="btn btn-sm btn-menu" @click="settingsToggle">
-              Setting <span class="fa fa-cog"></span>
+              Setting<span class="fa fa-cog"></span>
             </button>
             <share></share>
             <button id="panelLang" type="button" class="btn btn-sm btn-menu" @click="showShortcutsModal()">
-              Shortcuts <i class="fa fa-reply-all" aria-hidden="true"></i>
+              Shortcuts<i class="fa fa-reply-all" aria-hidden="true"></i>
             </button>
           </div>
           <div class="logoMenu">
             <login-button></login-button>
-            Made with <i class="fa fa-heart" aria-hidden="true" style="color: #e31d3b"></i> by
+            Made with<i class="fa fa-heart" aria-hidden="true" style="color: #e31d3b"></i> by
             <img src="../../assets/cb_logo_light.png">
           </div>
         </div>
@@ -52,14 +51,14 @@
       </div>
       <settings v-show="this.$store.state.showSettings"></settings>
     </div>
-    
+
     <modal name="download-modal" transition="pop-out" :width="680" :pivot-y="0.2" :height="auto">
       <div class="download-modal-title flex-center">
         confirm file name
       </div>
       <div class="download-modal-content flex-center">
         <span>File Name:</span>
-        <input v-on:keyup.enter="downloadCode" v-on:change="updateFileName" 
+        <input v-on:keyup.enter="downloadCode" v-on:change="updateFileName"
               ref="fileName" :value="this.$store.state.fileName" placeholder="Enter File name">
       </div>
       <div class="download-modal-button-set flex-space-between">
@@ -133,7 +132,7 @@
       }
     },
     methods: {
-      runCode() {        
+      runCode() {
         this.loading = !this.loading
         this.$store.dispatch('runCode').then((data) => {
           if (!this.$store.state.showInOutBox)
@@ -269,6 +268,10 @@
 </script>
 
 <style scoped>
+  i.fa {
+    margin-left: 4px;
+  }
+
   #fs_control {
     position: relative;
     z-index: 20;
@@ -401,7 +404,7 @@
   }
 
   .download-modal-title {
-    height: 60px;    
+    height: 60px;
     font-size: 24px;
     font-weight: 500;
   }
@@ -489,7 +492,7 @@
     height: 60px;
     border-bottom: 2px solid #ccc;
   }
-  
+
   .shortcuts-modal-content {
     font-size: 16px;
     font-weight: 400;
